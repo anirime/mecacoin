@@ -112,20 +112,13 @@ class mecacoin(IconScoreBase):
         		return self._balances[_to]
 
         return (t+b)
-    
-    @external        
+  
     def setDefaultLock(self, _to: Address, _flag : int) -> None : 
         self._token_release_investor_table[_to] = _flag
         d = int(self.now() / 1000000.0)
         for month in range(0,13) :
-            self.setLock(_to, month, d, 0 )
-    
-    @external
-    def getNow(self) -> int:
-        d = int(self.now() / 1000000.0)
+            self.setLock(_to, month, d, 0 ) 
 
-        return d
-                           
     @external
     def getUnlockedBalance(self, _to: Address) -> int:
         if self.msg.sender != self.owner :
