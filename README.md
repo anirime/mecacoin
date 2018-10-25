@@ -1,1 +1,1 @@
-# mecacoin
+# MECA Coin
